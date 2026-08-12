@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dry Fruit Shop – Header & Footer</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* =======================
+       CSS VARIABLES (PALETTE)
+    ======================== */
+    :root {
+      --pistachio: #93C572;
+      --mint: #B8E0C2;
+      --olive: #5F7F5A;
+      --cream: #FAF9F6;
+      --beige: #EDE6D8;
+      --gold: #D4AF37;
+      --dark: #2F4F3E;
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background : rgb(216, 140, 68)
+  
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =======================
+       TOPBAR
+    ======================== */
+    .topbar {
+      background:  #1b6311e6;
+      padding: 8px 16px;
+      font-size: 13px;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .topbar i {
+      color: white;
+      margin-right: 6px;
+    }
+
+    .social-icons a {
+      margin: 0 6px;
+      transition: transform 0.3s ease;
+      color: #B8E0C2;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: var(--gold);
+    }
+
+    /* =======================
+       HEADER
+    ======================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--olive);
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--cream);
+      display: none;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+
+    nav a {
+      padding: 14px;
+      border-bottom: 1px solid var(--beige);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      bottom: 6px;
+      width: 0;
+      height: 2px;
+      background: var(--pistachio);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 30px;
+    }
+
+    .shop-btn {
+      background: linear-gradient(135deg, var(--pistachio), var(--olive));
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      margin: 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    /* =======================
+       FOOTER
+    ======================== */
+    footer {
+      background: linear-gradient(135deg, var(--olive), var(--dark));
+      color: var(--cream);
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      padding: 40px 20px;
+      display: grid;
+      gap: 30px;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer li {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .newsletter input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 8px;
+    }
+
+    .newsletter button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 30px;
+      background: var(--gold);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .footer-social a {
+      margin-right: 10px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* =======================
+       MEDIA QUERIES
+    ======================== */
+    @media (min-width: 768px) {
+      .topbar-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      nav {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: none;
+        width: auto;
+      }
+
+      nav a {
+        border: none;
+        padding: 0 14px;
+      }
+
+      .shop-btn {
+        margin: 0 0 0 10px;
+      }
+
+      .footer-inner {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <b><i class="fas fa-phone"></i><a href="tel:+9145551666">9145551666</a> </b>
+        
+        <b><i class="fas fa-envelope"></i><a href="mailto:Zarratllp@gmail.com">zarratllp@gmail.com</a></b>
+         
+      </div>
+      <div class="social-icons">
+        <a href="http://wa.me/9145551666"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/zarratllp?igsh=czV1dDZwbzZ5Z25n"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo"></div>
+<img src="logo1.png" width="70" height="80" style="float: left; margin-right: 800px;">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="nav">
+        <a href="index.html"><b>Home</b></a>
+        <a href="AboutUs.html"><b>AboutUs</b></a>
+        <a href="Products.html"><b>Products</b></a>
+        
+        <a href="ContactUs.html"><b>ContactUs</b></a>
+        <a href="ContactUs.html" class="shop-btn">Shop Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Premium Dry Fruits</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:  #f0af79;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2e4f2e;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        /* Heading */
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        .page-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #d4af37;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Grid Layout */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: #faf9f8;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .contact-info h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        .contact-info a.social {
+            display: inline-block;
+            margin-right: 15px;
+            font-weight: 500;
+            color: #2e4f2e;
+            transition: all 0.3s ease;
+        }
+        .contact-info a.social:hover {
+            color: #faf9f8;
+        }
+
+        /* Contact Form */
+        form.contact-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        form.contact-form h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: #2e4f2e;
+            box-shadow: 0 0 5px rgba(46,79,46,0.3);
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        button.submit-btn {
+            background: linear-gradient(45deg, #2e4f2e, #6aa84f);
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        button.submit-btn:hover {
+            background: linear-gradient(45deg, #6aa84f, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Map */
+        .map-container {
+            margin-top: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+        }
+
+        /* Responsive */
+        @media(max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p><strong>Address:</strong> Shop No.02, Near old Municipal Office, Kotergate Road, Islam Pura, Bhiwandi, Dist.Thane.</p>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Email:</strong> zarratllp@gmail.com</p>
+                <p>
+                    <a href="#" class="social">Facebook</a>
+                    <a href="#" class="social">Instagram</a>
+                    <a href="#" class="social">Whatsapp</a>
+                </p>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" id="contactForm">
+                <h2>Send Us a Message</h2>
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Your Phone Number">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+               <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+            </form>
+        </div>
+
+        <!-- Map -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799143117!2d-74.25987368722857!3d40.69767006345583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c250b59b5d5c45%3A0x37f58f7f1ebbbf26!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Form Validation
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+            let error = '';
+
+            if(name === '' || email === '' || phone === '' || message === '') {
+                error = 'Please fill in all required fields.';
+            } else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                error = 'Please enter a valid email address.';
+            }
+
+            if(error) {
+                alert(error);
+                return;
+            }
+
+            alert('Thank you for contacting us, ' + name + '! We will get back to you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
+   
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>About Us</h3>
+        <p>Premium quality dry fruits sourced naturally to keep your family healthy and energized.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AboutUs.html">AboutUs</a></li>
+          <li><a href="Products.html">Products</a></li>
+          
+          <li><a href="ContactUs.html">ContactUs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+9145551666"><i class="fas fa-phone"></i></a> 
+        
+        <a href="mailto:Zarratllp@gmail.com">Zarratllp@gmail.com</a><i class="fas fa-envelope"></i>
+        
+        <div class="footer-social">
+          <a href="http://wa.me/918263808640"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/istiaq_ansari?igsh=MXBhb3VuendzY2tvZQ=="><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2025 DryFruit Shop. All Rights Reserved.
+    </div>
+  </footer>
+
+ 
+
+</body>
+</html>

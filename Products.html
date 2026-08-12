@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dry Fruit Shop – Header & Footer</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* =======================
+       CSS VARIABLES (PALETTE)
+    ======================== */
+    :root {
+      --pistachio: #93C572;
+      --mint: #B8E0C2;
+      --olive: #5F7F5A;
+      --cream: #FAF9F6;
+      --beige: #EDE6D8;
+      --gold: #D4AF37;
+      --dark: #2F4F3E;
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =======================
+       TOPBAR
+    ======================== */
+    .topbar {
+      background: #1b6311e6;
+      padding: 8px 16px;
+      font-size: 13px;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .topbar i {
+      color: white;
+      margin-right: 6px;
+    }
+
+    .social-icons a {
+      margin: 0 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: var(--gold);
+    }
+
+    /* =======================
+       HEADER
+    ======================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--olive);
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      font-size: 22px;
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--cream);
+      display: none;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+
+    nav a {
+      padding: 14px;
+      border-bottom: 1px solid var(--beige);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      bottom: 6px;
+      width: 0;
+      height: 2px;
+      background: var(--pistachio);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 30px;
+    }
+
+    .shop-btn {
+      background: linear-gradient(135deg, var(--pistachio), var(--olive));
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      margin: 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    /* =======================
+       FOOTER
+    ======================== */
+    footer {
+      background: linear-gradient(135deg, var(--olive), var(--dark));
+      color: var(--cream);
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      padding: 40px 20px;
+      display: grid;
+      gap: 30px;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer li {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .newsletter input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 8px;
+    }
+
+    .newsletter button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 30px;
+      background: var(--gold);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .footer-social a {
+      margin-right: 10px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* =======================
+       MEDIA QUERIES
+    ======================== */
+    @media (min-width: 768px) {
+      .topbar-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      nav {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: none;
+        width: auto;
+      }
+
+      nav a {
+        border: none;
+        padding: 0 14px;
+      }
+
+      .shop-btn {
+        margin: 0 0 0 10px;
+      }
+
+      .footer-inner {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <b><i class="fas fa-phone"></i><a href="tel:+9145551666">9145551666</a> </b>
+        
+        <b><i class="fas fa-envelope"></i><a href="mailto:Zarratllp@gmail.com">zarratllp@gmail.com</a></b>
+         
+      </div>
+      <div class="social-icons">
+        <a href="http://wa.me/9145551666"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/zarratllp?igsh=czV1dDZwbzZ5Z25n"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo"></div>
+<img src="logo1.png" width="70" height="80" style="float: left; margin-right: 800px;">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="nav">
+        <a href="index.html"><b>Home</b></a>
+        <a href="AboutUs.html"><b>AboutUs</b></a>
+        <a href="Products.html"><b>Products</b></a>
+        
+        <a href="ContactUs.html"><b>ContactUs</b></a>
+        <a href="ContactUs.html" class="shop-btn">Shop Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products | Premium Dry Fruits</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       CSS VARIABLES (COLOR THEME)
+    ================================ */
+    :root {
+      --pistachio: #7ca982;
+      --pistachio-dark: #5f8f6a;
+      --cream: #f7f4ef;
+      --beige: #efe8dc;
+      --gold: #c9a24d;
+      --text-dark: #2f3a32;
+      --white: #ffffff;
+    }
+
+    /* ===============================
+       GLOBAL STYLES
+    ================================ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, var(--cream), var(--beige));
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ===============================
+       PAGE HEADER
+    ================================ */
+    .page-header {
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--pistachio-dark);
+      margin-bottom: 12px;
+    }
+
+    .page-header p {
+      max-width: 650px;
+      margin: auto;
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    /* ===============================
+       PRODUCTS GRID
+    ================================ */
+    .products-section {
+      padding: 60px 6%;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    /* ===============================
+       PRODUCT CARD
+    ================================ */
+    .product-card {
+      background: linear-gradient(135deg, #f0af79, #fdba78dc);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      transform: translateY(40px);
+      opacity: 0;
+      backdrop-filter: blur(6px);
+    }
+
+    .product-card.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 25px 55px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-image {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .product-image img {
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.08);
+    }
+
+    .product-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .product-info p {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-bottom: 14px;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: 600;
+      color: var(--pistachio-dark);
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      background: linear-gradient(135deg, var(--pistachio), var(--pistachio-dark));
+      color: var(--white);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.35s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, var(--gold), #b8913d);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(201, 162, 77, 0.4);
+    }
+
+    /* ===============================
+       RESPONSIVE DESIGN
+    ================================ */
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-header h1 {
+        font-size: 2.2rem;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===============================
+       PAGE HEADER
+  ================================ -->
+  <header class="page-header">
+    <h1>Our Premium Dry Fruits</h1>
+    <p>Hand-picked, naturally sourced dry fruits crafted for health, taste, and purity.</p>
+  </header>
+
+  <!-- ===============================
+       PRODUCTS SECTION
+  ================================ -->
+  <section class="products-section">
+    <div class="products-grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="cashew.jpg" alt="Almonds">
+        </div>
+        <div class="product-info">
+          <h3>Cashews</h3>
+          <p>Crunchy, protein-rich Californian almonds.</p>
+        </div>
+        <div class="product-footer">
+          
+          <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="almond.jpg" alt="Cashews">
+        </div>
+        <div class="product-info">
+          <h3>Almonds</h3>
+          <p>Buttery, creamy and premium quality nuts.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="walnut.jpg" alt="Pistachios">
+        </div>
+        <div class="product-info">
+          <h3>Pistachios</h3>
+          <p>Perfectly roasted with natural crunch.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="raisin.jpg" alt="Walnuts">
+        </div>
+        <div class="product-info">
+          <h3>Raisins</h3>
+          <p>Rich in omega-3 and antioxidants.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 5 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pistachio.jpg" alt="Raisins">
+        </div>
+        <div class="product-info">
+          <h3>Pistachio</h3>
+          <p>Sweet, juicy, and sun-dried naturally.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 6 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="anjir.jpg" alt="Dates">
+        </div>
+        <div class="product-info">
+          <h3>Dried Fig</h3>
+          <p>Soft, naturally sweet premium dates.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 7 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="dry apricot.jpg" alt="Figs">
+        </div>
+        <div class="product-info">
+          <h3>Dried Apricot</h3>
+          <p>Fiber-rich, naturally dried figs.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 8 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="prune.jpg" alt="Apricots">
+        </div>
+        <div class="product-info">
+          <h3>Prune</h3>
+          <p>Soft texture with a tangy sweetness.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 9 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="makhana.jpg" alt="Hazelnuts">
+        </div>
+        <div class="product-info">
+          <h3>Fox Nuts</h3>
+          <p>Crunchy nuts with rich flavor.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 10 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pine nut.jpg" alt="Mixed Dry Fruits">
+        </div>
+        <div class="product-info">
+          <h3>Pne Nuts</h3>
+          <p>A balanced mix of premium dry fruits.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 11-->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="hazelnut.jpg" alt="Mixed Dry Fruits">
+        </div>
+        <div class="product-info">
+          <h3>Hazelnuts</h3>
+          <p>A balanced mix of premium dry fruits.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 12 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="brazilnut.jpg" alt="Mixed Dry Fruits">
+        </div>
+        <div class="product-info">
+          <h3>Brazil Nut</h3>
+          <p>A balanced mix of premium dry fruits.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="dry coconut.jpg" alt="Cashews">
+        </div>
+        <div class="product-info">
+          <h3>Dried Coconut</h3>
+          <p>Buttery, creamy and premium quality nuts.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="peanut.jpg" alt="Pistachios">
+        </div>
+        <div class="product-info">
+          <h3>Peanuts</h3>
+          <p>Perfectly roasted with natural crunch.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pecan nut.jpg" alt="Walnuts">
+        </div>
+        <div class="product-info">
+          <h3>Pecan Nuts</h3>
+          <p>Rich in omega-3 and antioxidants.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="macadamia.jpg" alt="Walnuts">
+        </div>
+        <div class="product-info">
+          <h3>Macadamia Nuts</h3>
+          <p>Rich in omega-3 and antioxidants.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="dates.jpg" alt="Almonds">
+        </div>
+        <div class="product-info">
+          <h3>Dates</h3>
+          <p>Crunchy, protein-rich Californian almonds.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="seeds.jpg" alt="Pistachios">
+        </div>
+        <div class="product-info">
+          <h3>Seeds</h3>
+          <p>Perfectly roasted with natural crunch.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="chocolates.jpg" alt="Walnuts">
+        </div>
+        <div class="product-info">
+          <h3>Imported Chocolates</h3>
+          <p>Rich in omega-3 and antioxidants.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="honey.jpg" alt="Walnuts">
+        </div>
+        <div class="product-info">
+          <h3>Honey</h3>
+          <p>Rich in omega-3 and antioxidants.</p>
+        </div>
+        <div class="product-footer">
+          
+           <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===============================
+       JAVASCRIPT (SCROLL ANIMATION)
+  ================================ -->
+  <script>
+    const cards = document.querySelectorAll('.product-card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festive Collection</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff8f0;
+}
+
+/* Section Styling */
+.festive-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #f0af79, #fdba78dc);
+}
+
+.festive-section h2 {
+    font-size: 36px;
+    color: #138b41;
+    margin-bottom: 10px;
+}
+
+.festive-section p {
+    color: #12d379;
+    margin-bottom: 40px;
+}
+
+/* Cards Container */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Card */
+.card {
+    background: #7de9b7;
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Content */
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin: 10px 0;
+    color: #5a3825;
+}
+
+.price {
+    color: hsl(140, 23%, 92%);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: linear-gradient(45deg, #026936a4, #1eaa93);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #bd0606, #0fd65b);
+}
+
+/* Festive Glow Effect */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(45deg, #4a8848, #ff7a18, #ffd700);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<section class="festive-section">
+    <h2>✨ Our Festive Collection ✨</h2>
+    <p>Celebrate every occasion with our premium dry fruits & gift boxes</p>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="fes4.jpg" alt="Almond Pack">
+            <div class="card-content">
+                <h3>Royal Almond Box</h3>
+                <div class="price">Healthy Nuts</div>
+                <a href="http://wa.me/9145551666" class="shop-btn"><b>Shop Now</b></a></button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="fes1.jpg" alt="Cashew Pack">
+            <div class="card-content">
+                <h3>Premium Gift packs</h3>
+                <div class="price">mix dryfruits</div>
+                <a href="http://wa.me/9145551666" class="btn">Shop Now</a></btn>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="fes2.jpg" alt="Mixed Dry Fruits">
+            <div class="card-content">
+                <h3>Festive Mix Box</h3>
+                <div class="price">Crunchy Nuts</div>
+                <a href="http://wa.me/9145551666" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="fes3.jpg" alt="Dates Pack">
+            <div class="card-content">
+                <h3>Arabian Dates Pack</h3>
+                <div class="price">Tasty bites</div>
+                <a href="http://wa.me/9145551666" class="btn">Shop Now</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>About Us</h3>
+        <p>Premium quality dry fruits sourced naturally to keep your family healthy and energized.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AboutUs.html">AboutUs</a></li>
+          <li><a href="Products.html">Products</a></li>
+          
+          <li><a href="ContactUs.html">ContactUs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+9145551666"><i class="fas fa-phone"></i></a> 
+        
+        <a href="mailto:Zarratllp@gmail.com">Zarratllp@gmail.com</a><i class="fas fa-envelope"></i>
+        
+        <div class="footer-social">
+          <a href="http://wa.me/918263808640"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/istiaq_ansari?igsh=MXBhb3VuendzY2tvZQ=="><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2025 DryFruit Shop. All Rights Reserved.
+    </div>
+  </footer>
+
+ 
+
+</body>
+</html>

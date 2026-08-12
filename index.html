@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dry Fruit Shop – Header & Footer</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* =======================
+       CSS VARIABLES (PALETTE)
+    ======================== */
+    :root {
+      --pistachio: #93C572;
+      --mint: #B8E0C2;
+      --olive: #5F7F5A;
+      --cream: #FAF9F6;
+      --beige: #EDE6D8;
+      --gold: #D4AF37;
+      --dark: #2F4F3E;
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =======================
+       TOPBAR
+    ======================== */
+    .topbar {
+      background: rgba(27, 99, 17, 0.9);
+      padding: 8px 16px;
+      font-size: 13px;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .topbar i {
+      color: white;
+      margin-right: 6px;
+    }
+
+    .social-icons a {
+      margin: 0 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: var(--gold);
+    }
+
+    /* =======================
+       HEADER
+    ======================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--olive);
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      font-size: 22px;
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--cream);
+      display: none;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+
+    nav a {
+      padding: 14px;
+      border-bottom: 1px solid var(--beige);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      bottom: 6px;
+      width: 0;
+      height: 2px;
+      background: var(--pistachio);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 30px;
+    }
+
+    .shop-btn {
+      background: linear-gradient(135deg, var(--pistachio), var(--olive));
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      margin: 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    /* =======================
+       FOOTER
+    ======================== */
+    footer {
+      background: linear-gradient(135deg, var(--olive), var(--dark));
+      color: var(--cream);
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      padding: 40px 20px;
+      display: grid;
+      gap: 30px;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer li {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .newsletter input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 8px;
+    }
+
+    .newsletter button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 30px;
+      background: var(--gold);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .footer-social a {
+      margin-right: 10px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* =======================
+       MEDIA QUERIES
+    ======================== */
+    @media (min-width: 768px) {
+      .topbar-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      nav {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: none;
+        width: auto;
+      }
+
+      nav a {
+        border: none;
+        padding: 0 14px;
+      }
+
+      .shop-btn {
+        margin: 0 0 0 10px;
+      }
+
+      .footer-inner {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <b><i class="fas fa-phone"></i><a href="tel:+9145551666">9145551666</a> </b>
+        
+        <b><i class="fas fa-envelope"></i><a href="mailto:Zarratllp@gmail.com">zarratllp@gmail.com</a></b>
+         
+      </div>
+      <div class="social-icons">
+        <a href="http://wa.me/9145551666"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/zarratllp?igsh=czV1dDZwbzZ5Z25n"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo"></div>
+<img src="logo1.png" width="70" height="80" style="float: left; margin-right: 800px;">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="nav">
+        <a href="index.html"><b>Home</b></a>
+        <a href="AboutUs.html"><b>AboutUs</b></a>
+        <a href="Products.html"><b>Products</b></a>
+        
+        <a href="ContactUs.html"><b>ContactUs</b></a>
+        <a href="ContactUs.html" class="shop-btn"><b>Shop Now</b></a>
+      </nav>
+    </div>
+  </header>
+   
+  <!--HERO SECTION-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zarrat LLP | Premium Dry Fruits</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 >
+      Nature’s Finest <span>Premium Dry Fruits</span>
+    </h1>
+    <p style="text-align: center;">
+      Handpicked, fresh, and nutrient-rich dry fruits crafted for a <span>healthy and elegant lifestyle.</span>
+    </p>
+
+    <div style="text-align: left; margin-left: 20px;"class="hero-buttons">
+      <a href="ContactUs.html" class="btn primary" style="text-align: left; margin-left: 70px;">Shop Now</a>
+      <a href="Products.html" class="btn secondary">View Products</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="img1.jpg" alt="Premium Dry Fruits">
+  </div>
+</section>
+
+<!-- WHATSAPP FLOAT BUTTON -->
+<a href="http://wa.me/9145551666"_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Why Choose Us | Premium Dry Fruits</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --green: #076b07;
+  --green-dark: #6f926f;
+  --cream: #a1740a;
+  --gold: #8a6311;
+  --glass: rgba(255,255,255,0.55);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #428103, #3c8103);
+}
+
+/* SECTION */
+.why-choose {
+  background-color: #fac17b;
+  padding: 90px 8%;
+  text-align: center;
+}
+
+.why-choose h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  color: var(--green-dark);
+ margin-bottom: 15px;
+}
+
+.why-choose p.subtitle {
+  max-width: 600px;
+  margin: auto;
+  color: #066b27;
+  margin-bottom: 70px;
+  
+}
+
+/* LAYOUT */
+.why-container {
+  
+  
+  display: grid;
+  grid-template-columns: 1fr 320px 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  
+}
+
+/* CENTER IMAGE */
+.center-image {
+  position: relative;
+}
+
+.center-image img {
+  width: 100%;
+  border-radius: 50%;
+  background:#066b27;
+  padding: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.center-image img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(143,174,143,0.7);
+}
+
+/* ADVANTAGE LIST */
+.advantages {
+  background-color:linear-gradient(135deg, #e2ad81, #f8c593dc);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.adv-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.adv-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.adv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(143,174,143,0.35);
+}
+
+.adv-card h4 {
+  margin: 10px 0 6px;
+  font-size: 18px;
+  color: var(--green-dark);
+}
+
+.adv-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ICON */
+.icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green), var(--green-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 22px;
+  transition: transform 0.4s ease;
+}
+
+.adv-card:hover .icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width: 992px) {
+  .why-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .advantages {
+    align-items: center;
+  }
+
+  .adv-card {
+    max-width: 360px;
+  }
+}
+</style>
+</head>
+
+<!--WHY CHOOSEUS-->
+
+<body>
+
+<section class="why-choose">
+  <h2>Why Choose Our Dry Fruits</h2>
+  <p class="subtitle">Choose us for freshness you can taste, quality you can trust, and service you can rely on.</p>
+
+  <div class="why-container">
+
+    <!-- LEFT -->
+    <div class="advantages">
+      <div class="adv-card">
+        <div class="icon">🌱</div>
+        <h4>100% Natural</h4>
+        <p>No preservatives or artificial additives</p>
+      </div>
+
+      <div class="adv-card">
+        <div class="icon">⭐</div>
+        <h4>Premium Quality</h4>
+        <p>Carefully selected finest dry fruits</p>
+      </div>
+
+      <div class="adv-card">
+        <div class="icon">🛡️</div>
+        <h4>Hygienic Packing</h4>
+        <p>Sealed for freshness & safety</p>
+      </div>
+    </div>
+
+    <!-- CENTER IMAGE -->
+    <div class="center-image">
+      <img src="fes1.jpg">
+    </div>
+
+    <!-- RIGHT -->
+    <div class="advantages">
+      <div class="adv-card">
+        <div class="icon">💚</div>
+        <h4>Health Boosting</h4>
+        <p>Rich in nutrients & antioxidants</p>
+      </div>
+
+      <div class="adv-card">
+        <div class="icon">🚚</div>
+        <h4>Fast Delivery</h4>
+        <p>Quick & reliable doorstep delivery</p>
+      </div>
+
+      <div class="adv-card">
+        <div class="icon">🤝</div>
+        <h4>Trusted Brand</h4>
+        <p>Loved by thousands of happy customers</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+/* Scroll Animation */
+const cards = document.querySelectorAll('.adv-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dry Fruit Gallery</title>
+
+<style>
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fdfaf5;
+  color: #4b3b2b;
+}
+
+/* ===== HEADER ===== */
+h1 {
+  text-align: center;
+  padding: 25px 10px;
+  font-weight: 600;
+  color: #6b4f2a;
+}
+
+/* ===== FILTER BUTTONS ===== */
+.filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  border: none;
+  padding: 10px 18px;
+  margin: 6px;
+  border-radius: 25px;
+  background: #efe3cf;
+  color: #5a4326;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filters button:hover,
+.filters button.active {
+  background: linear-gradient(135deg, #c6a15b, #a67c3d);
+  color: #fff;
+}
+
+/* ===== GALLERY ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ===== ITEM ===== */
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Zoom effect */
+.gallery-item:hover img {
+  transform: scale(1.12);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  background: rgba(166, 124, 61, 0.9);
+  color: #fff;
+  font-weight: 500;
+  transform: translateY(100%);
+  transition: 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+  transform: translateY(0);
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+  }
+}
+</style>
+</head>
+
+
+<!--TESTIMONIALS-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Testimonial Section</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pistachio: #8fbf9f;
+      --cream: #f7f3eb;
+      --gold: #c9a24d;
+      --text-dark: #2f3a34;
+      --glass-bg: rgba(255, 255, 255, 0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f6f2ea, #eef5ef);
+      color: var(--text-dark);
+    }
+
+    /* ===== Section ===== */
+    .testimonial-section {
+      background-color:rgb(149, 216, 149);
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    .testimonial-section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .testimonial-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+      color: #355f4a;
+    }
+
+    .testimonial-section p.subtitle {
+      font-size: 1rem;
+      color: #6b7c73;
+      margin-bottom: 50px;
+    }
+
+    /* ===== Slider Wrapper ===== */
+    .slider-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.6s ease;
+    }
+
+    /* ===== Testimonial Card ===== */
+    .testimonial-card {
+      min-width: 100%;
+      padding: 30px;
+    }
+
+    .card-inner {
+      max-width: 600px;
+      margin: auto;
+      padding: 40px 30px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+    }
+
+    .card-inner:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    }
+
+    .card-inner img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      margin-bottom: 15px;
+    }
+
+    .card-inner h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .stars {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .card-inner p {
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #44534b;
+    }
+
+    /* ===== Controls ===== */
+    .controls {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .arrow {
+      background: var(--pistachio);
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+
+    .arrow:hover {
+      background: #79a98a;
+    }
+
+    /* ===== Dots ===== */
+    .dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background: var(--gold);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .testimonial-section h2 {
+        font-size: 2.1rem;
+      }
+
+      .card-inner {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="testimonial-section" id="testimonial">
+    <h2>What Our Customers Say</h2>
+    <p class="subtitle">Trusted by dry-fruit lovers for freshness & quality</p>
+
+    <div class="slider-wrapper" id="sliderWrapper">
+      <div class="slider" id="slider">
+        
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+          <div class="card-inner">
+            <img src="cs1.jpg" alt="Customer">
+            <h3>Anita Sharma</h3>
+            <div class="stars">★★★★★</div>
+            <p>
+              The almonds and pistachios were incredibly fresh. Premium quality
+              and beautiful packaging. Highly recommended!
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+          <div class="card-inner">
+            <img src="cs2.jpg" alt="Customer">
+            <h3>Rahul Mehta</h3>
+            <div class="stars">★★★★★</div>
+            <p>
+              One of the best dry-fruit stores I’ve ordered from. Rich taste,
+              natural flavor, and excellent service.
+            </p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+          <div class="card-inner">
+            <img src="cs3.jpg" alt="Customer">
+            <h3>Pooja Verma</h3>
+            <div class="stars">★★★★★</div>
+            <p>
+              Loved the cashews and dates! The quality truly feels premium and
+              organic. Will definitely reorder.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="arrow" id="prev">&#10094;</button>
+      <div class="dots" id="dots"></div>
+      <button class="arrow" id="next">&#10095;</button>
+    </div>
+  </section>
+
+  <script>
+    const slider = document.getElementById("slider");
+    const slides = document.querySelectorAll(".testimonial-card");
+    const dotsContainer = document.getElementById("dots");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    let index = 0;
+    let interval;
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => moveToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".dot");
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[index].classList.add("active");
+    }
+
+    function moveToSlide(i) {
+      index = i;
+      updateSlider();
+      resetAutoSlide();
+    }
+
+    function nextSlide() {
+      index = (index + 1) % slides.length;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + slides.length) % slides.length;
+      updateSlider();
+    }
+
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    function startAutoSlide() {
+      interval = setInterval(nextSlide, 4000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(interval);
+      startAutoSlide();
+    }
+
+    document.getElementById("sliderWrapper").addEventListener("mouseenter", () => {
+      clearInterval(interval);
+    });
+
+    document.getElementById("sliderWrapper").addEventListener("mouseleave", startAutoSlide);
+
+    startAutoSlide();
+
+    // Scroll reveal animation
+    const section = document.querySelector(".testimonial-section");
+    window.addEventListener("scroll", () => {
+      const rect = section.getBoundingClientRect().top;
+      if (rect < window.innerHeight - 100) {
+        section.classList.add("show");
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+<!--OUR BESTSELLERS-->
+
+<!--bestsellers-->
+
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>About Us</h3>
+        <p>Premium quality dry fruits sourced naturally to keep your family healthy and energized.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AboutUs.html">AboutUs</a></li>
+          <li><a href="Products.html">Products</a></li>
+          
+          <li><a href="ContactUs.html">ContactUs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <b><i class="fas fa-phone">9145551666<a href="tel:+9145551666"></i></a></b> 
+        
+        <b><a href="mailto:Zarratllp@gmail.com">Zarratllp@gmail.com</a><i class="fas fa-envelope"></i></b>
+        
+        <div class="footer-social">
+          <a href="http://wa.me/+91 9145551666 "><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/zarratllp?igsh=czV1dDZwbzZ5Z25n"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2025 DryFruit Shop. All Rights Reserved.
+    </div>
+  </footer>
+
+ 
+
+</body>
+</html>
+
+

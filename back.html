@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Why Choose Us | Dry Fruit Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* -------------------------
+           GLOBAL STYLES
+        ------------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            background-color: #f6f3ec;
+        }
+
+        /* -------------------------
+           WHY CHOOSE US SECTION
+        ------------------------- */
+        .why-choose-us {
+            background: linear-gradient(135deg, #0b3d2e, #0f4f3a);
+            padding: 80px 20px;
+            color: #f5f0e6;
+            overflow: hidden;
+        }
+
+        .why-choose-us h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #f8e6b0;
+            letter-spacing: 1px;
+        }
+
+        .why-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        /* -------------------------
+           ADVANTAGE CARDS
+        ------------------------- */
+        .advantages {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .adv-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .adv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        }
+
+        /* -------------------------
+           CSS ICONS (NO LIBRARIES)
+        ------------------------- */
+        .icon {
+            min-width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f8e6b0, #d6b873);
+            position: relative;
+        }
+
+        .icon::after {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border-radius: 4px;
+            background: #0b3d2e;
+        }
+
+        .adv-text h4 {
+            font-size: 18px;
+            color: #f8e6b0;
+            margin-bottom: 6px;
+        }
+
+        .adv-text p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #f1ead9;
+        }
+
+        /* -------------------------
+           CENTER IMAGE
+        ------------------------- */
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+
+        .center-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 24px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.45);
+        }
+
+        /* -------------------------
+           ANIMATION ACTIVE STATES
+        ------------------------- */
+        .show {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        /* -------------------------
+           RESPONSIVE DESIGN
+        ------------------------- */
+        @media (max-width: 992px) {
+            .why-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .advantages {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .adv-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .adv-card {
+                width: 100%;
+            }
+
+            .why-choose-us h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<section class="why-choose-us">
+    <h2>Why Choose Us</h2>
+
+    <div class="why-container">
+
+        <!-- LEFT ADVANTAGES -->
+        <div class="advantages">
+            <div class="adv-card">
+                <div class="icon"></div>
+                <div class="adv-text">
+                    <h4>Premium Quality Dry Fruits</h4>
+                    <p>Carefully selected dry fruits with superior taste and freshness.</p>
+                </div>
+            </div>
+
+            <div class="adv-card">
+                <div class="icon"></div>
+                <div class="adv-text">
+                    <h4>Farm-Fresh & Handpicked</h4>
+                    <p>Sourced directly from trusted farms and producers.</p>
+                </div>
+            </div>
+
+            <div class="adv-card">
+                <div class="icon"></div>
+                <div class="adv-text">
+                    <h4>Hygienic Packaging</h4>
+                    <p>Sealed and packed with strict hygiene standards.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER IMAGE -->
+        <div class="center-image">
+            <!-- Replace src with your own image path -->
+            <img src="https://via.placeholder.com/400x500.png?text=Premium+Dry+Fruits" alt="Dry Fruits">
+        </div>
+
+        <!-- RIGHT ADVANTAGES -->
+        <div class="advantages">
+            <div class="adv-card">
+                <div class="icon"></div>
+                <div class="adv-text">
+                    <h4>100% Natural & Healthy</h4>
+                    <p>No additives or preservatives, just pure goodness.</p>
+                </div>
+            </div>
+
+            <div class="adv-card">
+                <div class="icon"></div>
+                <div class="adv-text">
+                    <h4>Trusted by Thousands</h4>
+                    <p>Loved by customers for quality and consistency.</p>
+                </div>
+            </div>
+
+            <div class="adv-card">
+                <div class="icon"></div>
+                <div class="adv-text">
+                    <h4>Best Price Guarantee</h4>
+                    <p>Premium quality at fair and transparent prices.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    /* -------------------------
+       SCROLL ANIMATION
+    ------------------------- */
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll(".adv-card, .center-image").forEach(el => {
+        observer.observe(el);
+    });
+</script>
+
+</body>
+</html>

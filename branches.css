@@ -1,0 +1,114 @@
+/* Root Theme Colors */
+:root {
+  --pistachio: #8fae8f;
+  --cream: #f9f6ef;
+  --gold: #c9a44c;
+  --text-dark: #3a3a3a;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+}
+
+/* Section Styling */
+.branches-section {
+  background: linear-gradient(135deg, var(--cream), #ffffff);
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.branches-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: var(--pistachio);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #777;
+  margin-bottom: 50px;
+  font-size: 16px;
+}
+
+/* Grid Layout */
+.branches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Branch Card */
+.branch-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+
+.branch-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(143, 174, 143, 0.35);
+}
+
+/* Icon */
+.branch-card .icon {
+  font-size: 28px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+/* Card Text */
+.branch-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.branch-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.branch-card span {
+  font-size: 14px;
+  color: var(--pistachio);
+  font-weight: 500;
+}
+
+/* Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .branches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .branches-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}

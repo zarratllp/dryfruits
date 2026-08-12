@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dry Fruit Shop – Header & Footer</title>
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* =======================
+       CSS VARIABLES (PALETTE)
+    ======================== */
+    :root {
+      --pistachio: #c3f89f;
+      --mint: #B8E0C2;
+      --olive: #aef1a4;
+      --cream: #FAF9F6;
+      --beige: #EDE6D8;
+      --gold: #D4AF37;
+      --dark: #a1f8ca;
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    bo
+    dy {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =======================
+       TOPBAR
+    ======================== */
+    .topbar {
+      background: #1b6311e6;
+      padding: 8px 16px;
+      font-size: 13px;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .topbar i {
+      color: white;
+      margin-right: 6px;
+    }
+
+    .social-icons a {
+      margin: 0 6px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: var(--gold);
+    }
+
+    /* =======================
+       HEADER
+    ======================== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--cream);
+      box-shadow: var(--shadow);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--olive);
+      font-weight: 700;
+    }
+
+    .menu-toggle {
+      font-size: 22px;
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--cream);
+      display: none;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+
+    nav a {
+      padding: 14px;
+      border-bottom: 1px solid var(--beige);
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 14px;
+      bottom: 6px;
+      width: 0;
+      height: 2px;
+      background: var(--pistachio);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 30px;
+    }
+
+    .shop-btn {
+      background: linear-gradient(135deg, var(--pistachio), var(--olive));
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      margin: 14px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+
+    .shop-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    nav.active {
+      display: flex;
+    }
+
+    /* =======================
+       FOOTER
+    ======================== */
+    footer {
+      background: linear-gradient(135deg, var(--olive), var(--dark));
+      color: var(--cream);
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      padding: 40px 20px;
+      display: grid;
+      gap: 30px;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer li {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    footer ul {
+      list-style: none;
+    }
+
+    footer li {
+      margin-bottom: 8px;
+    }
+
+    .newsletter input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 8px;
+    }
+
+    .newsletter button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 30px;
+      background: var(--gold);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .footer-social a {
+      margin-right: 10px;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    /* =======================
+       MEDIA QUERIES
+    ======================== */
+    @media (min-width: 768px) {
+      .topbar-inner {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+
+      nav {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: none;
+        width: auto;
+      }
+
+      nav a {
+        border: none;
+        padding: 0 14px;
+      }
+
+      .shop-btn {
+        margin: 0 0 0 10px;
+      }
+
+      .footer-inner {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <b><i class="fas fa-phone"></i><a href="tel:+9145551666">9145551666</a> </b>
+        
+        <b><i class="fas fa-envelope"></i><a href="mailto:Zarratllp@gmail.com">zarratllp@gmail.com</a></b>
+         
+      </div>
+      <div class="social-icons">
+        <a href="http://wa.me/9145551666"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/zarratllp?igsh=czV1dDZwbzZ5Z25n"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <div class="logo"></div>
+<img src="logo1.png" width="70" height="80" style="float: left; margin-right: 800px;">
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="nav">
+        <a href="index.html"><b>Home</b></a>
+        <a href="AboutUs.html"><b>AboutUs</b></a>
+        <a href="Products.html"><b>Products</b></a>
+        
+        <a href="ContactUs.html"><b>ContactUs</b></a>
+        <a href="ContactUs.html" class="shop-btn">Shop Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Premium Dry Fruits</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================= ROOT VARIABLES ================= */
+    :root {
+      --pistachio: #1a8d0b;
+      --pistachio-dark: #0b3604;
+      --cream: #6e4909;
+      --beige: #63502e;
+      --gold: #96845b;
+      --text-dark: #2f2f2f;
+      --glass-bg: rgba(212, 143, 143, 0.55);
+      --shadow-soft: 0 20px 40px rgba(190, 33, 33, 0.08);
+      --radius: 18px;
+      --transition: all 0.5s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background:linear-gradient(9135deg, #f0af79, #fdba78dc)
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: var(--radius);
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    /* ================= HERO SECTION ================= */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(
+        135deg,
+        rgba(23, 75, 16, 0.9),
+        rgba(136, 92, 15, 0.9)
+      ),
+      url("https://images.unsplash.com/photo-1604908554023-01b0b7db1c1b");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {                               
+      max-width: 800px;
+      animation: fadeUp 1.4s ease forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #f7f7f7;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* ================= ABOUT SECTION ================= */
+    .about {
+      background: #f0af79
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .about-text h2::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: var(--gold);
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      border-radius: 10px;
+    }
+
+    .about-text p {
+      margin-top: 25px;
+      color: #555;
+    }
+
+    /* ================= MISSION & VISION ================= */
+    .mission-vision {
+      background: whitesmoke
+      text-align: center;
+    }
+
+    .mv-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .mv-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      padding: 40px 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .mv-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 25px 60px rgba(150, 107, 6, 0.35);
+    }
+
+    .mv-card span {
+      font-size: 2.2rem;
+      color: var(--gold);
+    }
+
+    .mv-card h3 {
+      margin: 15px 0;
+      font-size: 1.6rem;
+    }
+
+    /* ================= WHY DIFFERENT ================= */
+    .features {
+      background:rgb(224, 159, 98);
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .feature-card {
+      padding: 35px 25px;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+    }
+
+    .feature-card h4 {
+      margin-top: 15px;
+      font-size: 1.3rem;
+    }
+
+    /* ================= TRUST INDICATORS ================= */
+    .stats {
+      background: linear-gradient(135deg, var(--pistachio), var(--pistachio-dark));
+      color: #fff;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .stat h3 {
+      font-size: 3rem;
+      color: var(--gold);
+    }
+
+    /* ================= ANIMATIONS ================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    
+      
+    <div class="hero-content">
+      <img src="home img.png" width="300000" height="400">
+      <h1 style="color:#f2f3f2">Our Story of Purity & Taste</h1>
+      <p style="color:#f8f7f7">
+        "Rooted in tradition, perfected by quality, and trusted by thousands".
+        we bring you nature’s finest dry fruits with unmatched freshness.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about reveal">
+    <style>
+      .about reveal{
+        background-color: #198d0a;
+      }
+      </style>
+    <div class="about-grid">
+      <img src="img3.jpg">
+      <div class="about-text">
+        <h2 style="color: #1a8d0b;">Who We Are</h2>
+        <p>
+          "We are a trusted dry fruit store established in 2023 by<u> <span style="font-size: 18px;"><b>Mohammad Yusuf,</b></span></u>dedicated to providing premium quality dry fruits at affordable prices. With a strong commitment to freshness, purity, and customer satisfaction, our journey began with a single vision — to deliver the finest selection of dry fruits to every household.
+
+Today, we proudly operate 4 branches across Bhiwandi, serving our customers with consistency, quality, and care. Whether it’s daily nutrition or festive gifting, we ensure every product meets the highest standards."
+          
+          “We believe healthy eating should be simple and delicious.</p><p>That’s why we offer naturally rich, nutrient-packed dry fruits with no added preservatives—perfect for your everyday wellness.”
+          We source premium dry fruits directly from trusted farmers and
+          regions known for excellence. Every nut, every raisin, and every
+          bite reflects purity, care, and uncompromised quality.
+        </p>
+        <p>
+          Our commitment lies in hygienic handling, natural freshness, and
+          delivering nutrition that families trust every day.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="mission-vision reveal">
+    <h2 style="font-size: xx-large; color: #1a8d0b; " ">Our Mission & Vision</h2>
+    <div class="mv-cards">
+      <div class="mv-card">
+        <span>🌿</span>
+        <h3 style="color: #1a8d0b;text-align: center;">Our Mission</h3>
+        <p style="color: #1a8d0b;text-align: center;">To ensure purity, hygiene, and freshness in every product we deliver, & To build lasting relationships with customers through trust, transparency, and excellent service..</p>
+      </div>
+      <div class="mv-card">
+        <span>✨</span>
+        <h3 style="color: #1a8d0b; text-align: center;">Our Vision</h3>
+        <p style="color: #1a8d0b; text-align: center;
+        
+        
+        
+        
+        
+        
+        
+        ">To become a trusted name in delivering premium-quality dry fruits and nuts, bringing health, freshness, and natural goodness to every household while promoting a healthier lifestyle..</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DIFFERENT -->
+  <section class="features reveal">
+    <h2 style="font-size: xx-large; color: #1a8d0b;">Why We Are Different</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4 style="color: #1a8d0b;">100% Natural & Fresh</h4>
+      </div>
+      <div class="feature-card">
+        <h4 style="color: #1a8d0b;">Handpicked Quality</h4>
+      </div>
+      <div class="feature-card">
+        <h4 style="color: #1a8d0b;">Hygienic Packaging</h4>
+      </div>
+      <div class="feature-card">
+        <h4 style="color: #1a8d0b;">Trusted by Customers</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats reveal">
+    <div class="stats-grid">
+      <div class="stat">
+        <h3 data-count="15">0</h3>
+        <p>Years of Experience</p>
+      </div>
+      <div class="stat">
+        <h3 data-count="25000">0</h3>
+        <p>Happy Customers</p>
+      </div>
+      <div class="stat">
+        <h3 data-count="100">0</h3>
+        <p>Premium Quality</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    /* ================= SCROLL REVEAL ================= */
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    /* ================= COUNTER ================= */
+    const counters = document.querySelectorAll("[data-count]");
+
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          let start = 0;
+          const end = +el.dataset.count;
+          const step = end / 100;
+
+          const update = () => {
+            start += step;
+            if (start < end) {
+              el.textContent = Math.floor(start);
+              requestAnimationFrame(update);
+            } else {
+              el.textContent = end;
+            }
+          };
+          update();
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 1 });
+
+    counters.forEach(c => counterObserver.observe(c));
+  </script>
+
+</body>
+</html>
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Us – Premium Dry Fruit Shop</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pistachio: #6f8f72;
+      --pistachio-light: #8fb79b;
+      --cream: #f8f5ef;
+      --gold: #c9a14a;
+      --dark: #2f3a34;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--cream);
+      color: var(--dark);
+    }
+
+    /* ================= ABOUT US SECTION ================= */
+    .about-section {
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #fdfcf9, var(--cream));
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-container h2::after {
+      content: "";
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      position: absolute;
+      left: 20%;
+      bottom: -8px;
+      transition: width 0.4s ease;
+    }
+
+    .about-container h2:hover::after {
+      width: 90%;
+    }
+
+    .about-intro {
+      max-width: 750px;
+      margin: 30px auto 60px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* ================= CARDS ================= */
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .about-card {
+      background: rgba(105, 10, 10, 0.75);
+      backdrop-filter: blur(8px);
+      border-radius: 18px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(201, 161, 74, 0.25);
+      transform: translateY(40px);
+      opacity: 0;
+      transition: all 0.6s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(201,161,74,0.15), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .about-card:hover::before {
+      opacity: 1;
+    }
+
+    .about-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      border-color: var(--gold);
+    }
+
+    .about-card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pistachio), var(--pistachio-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: white;
+      transition: transform 0.4s ease;
+    }
+
+    .about-card:hover .icon {
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .about-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .about-card h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+
+    .about-card:hover h3::after {
+      width: 100%;
+    }
+
+    .about-card p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 992px) {
+      .about-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .about-container h2 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Branches | Premium Dry Fruit Shop</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===============================
+       Root Variables & Base Styles
+    =============================== */
+    :root {
+      --green: #6f8f72;
+      --green-dark: #5b755e;
+      --cream: #f8f5ef;
+      --beige: #efe8dc;
+      --gold: #c6a75e;
+      --text-dark: #2f2f2f;
+      --text-light: #6b6b6b;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(180deg, var(--cream), var(--beige));
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Branches | Premium Dry-Fruit Shop</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pistachio: #7a9b76;
+      --pistachio-light: #a9c4a3;
+      --cream: #f6f3ee;
+      --beige: #efe8dc;
+      --gold: #c9a24d;
+      --text-dark: #2f2f2f;
+      --glass-bg: rgba(255, 255, 255, 0.55);
+      --glass-border: rgba(255, 255, 255, 0.35);
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f0af79;
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* Section */
+    .branches-section {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2.6rem;
+      color: var(--pistachio);
+      margin-bottom: 12px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--pistachio));
+      margin: 14px auto 0;
+      border-radius: 2px;
+    }
+
+    .section-header p {
+      max-width: 600px;
+      margin: 18px auto 0;
+      font-size: 1rem;
+      color: #5a5a5a;
+    }
+
+    /* Grid */
+    .branches-grid {
+      background-image:('shop.jpg');
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    /* Card */
+    .branch-card {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0.4)
+      );
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .branch-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .branch-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      border-color: var(--gold);
+    }
+
+    .branch-icon {
+      font-size: 1.8rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .branch-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      color: var(--pistachio);
+    }
+
+    .branch-location {
+      font-size: 0.95rem;
+        font-weight: 500;
+      margin-bottom: 14px;
+      color: #771414;
+    }
+
+    .branch-details p {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .branch-details span {
+      font-weight: 500;
+      color: #333;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .section-header h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="branches-section" id="our-branches">
+    <header class="section-header">
+      <h2 STYLE="color: #126807;">Our Branches</h2>
+      <p style="color: #0f5705;">
+        Bringing premium, hand-selected dry fruits closer to you — visit any of
+        our thoughtfully curated store locations.
+      </p>
+    </header>
+
+    <div class="branches-grid">
+      <!-- Branch 1 -->
+      <article class="branch-card">
+        <div class="branch-icon">📍</div>
+        <h3 style="color: #1a8d0b;">Zarrat Company Outlet Store</h3>
+        <div class="branch-location">Bhiwandi</div>
+        <div class="branch-details">
+          <p style="color: #1a8d0b;"><span style="font-size: 18px;"><b>Address:</b></span></p><p>Shop No.02, Near old Municipal Office, Kotergate Road, Islam Pura, Bhiwandi, Dist.Thane. </p>
+          <p style="color: #1a8d0b
+          ;"><P style="color: #1a8d0b;"><span><b>Phone:</b></span> +91 9284646480</p>
+          <p style="color: #1a8d0b;"><span><b>Hours:</b></span> 10:00 AM – 12:00 PM</p>
+        </div>
+      </article>
+
+      <!-- Branch 2 -->
+      <article class="branch-card">
+        <div class="branch-icon">📍</div>
+        <h3 style="color: #1a8d0b;">Zarrat Company Outlet Store</h3>
+        <div class="branch-location"> Bhiwandi</div>
+        <div class="branch-details">
+          <p style="color: #1a8d0b;"><span style="font-size: 18px;"><b>Address:</b></span></p><p>Shop No.5&6,Next to Sagar Plaza Hotel, Salamat Pura, Naigaon Road, Bhiwandi,Dist.Thane.</p>
+          <P style="color: #1a8d0b;"><span><b>Phone:</b></span> +91 9284646480</p>
+          <p style="color: #1a8d0b;"><span><b>Hours:</b></span> 10:00 AM – 12:00 PM</p>
+        </div>
+      </article>
+
+      <!-- Branch 3 -->
+      <article class="branch-card">
+        <div class="branch-icon">📍</div>
+        <h3 style="color: #1a8d0b;">Zarrat Company Outlet Store</h3>
+        <div class="branch-location">Bhiwandi</div>
+        <div class="branch-details">
+          <p style="color: #1a8d0b;"><span style="font-size: 18px;"><b>Address:</b></span></p><p>Shop No.07, telipada, near Ekta Hospital, Opp.Sarika Hotel, Thane road, Bhiwandi, Dist. Thane.</p>
+          <P style="color: #1a8d0b;"><span><b>Phone:</b></span> +91 9284646480</p>
+          <p style="color: #1a8d0b;"><span><b>Hours:</b></span> 10:00 AM – 12:00 PM</p>
+        </div>
+      </article>
+
+      <!-- Branch 4 -->
+      <article class="branch-card">
+        <div class="branch-icon">📍</div>
+        <h3 style="color: #1a8d0b;">Zarrat Company Outlet Store</h3>
+        <div class="branch-location">Bhiwandi</div>
+        <div class="branch-details">
+          <p style="color: #1a8d0b;"><span style="font-size: 18px;"><b>Address:</b></span></p><p>Shop No.1407/0, near Jia Amber Mobile world, Opp.AMS Hospital, Dargah raod, Narpoli-2,Bhiwandi, Dist.Thane.</p>
+         <P style="color: #1a8d0b;"><span><b>Phone:</b></span> +91 9284646480</p>
+          <p style="color: #1a8d0b;"><span><b>Hours:</b></span> 10:00 AM – 12:00 PM</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script>
+    // Simple fade-in / slide-up animation on scroll
+    const cards = document.querySelectorAll(".branch-card");
+
+    const revealOnScroll = () => {
+      const triggerPoint = window.innerHeight * 0.85;
+
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if (cardTop < triggerPoint) {
+          card.classList.add("visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Festive Collection</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #faf7f2;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 32px;
+  color: #8B5E3C;
+}
+
+.section p {
+  max-width: 600px;
+  margin: 10px auto 40px;
+  color: #555;
+}
+
+/* Slider */
+.slider-container {
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cards */
+.card {
+  min-width: 250px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.price {
+  font-weight: bold;
+  color: #8B5E3C;
+  margin: 10px 0;
+}
+
+button {
+  background: #8B5E3C;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #a9744f;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: #8B5E3C;
+  color: white;
+  border: none;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  left: -10px;
+}
+
+.arrow.right {
+  right: -10px;
+}
+
+@media(max-width:768px){
+  .card {
+    min-width: 200px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+
+
+  <!-- FOOTER -->
+   <footer>
+    <div class="footer-inner">
+      <div>
+        <h3>About Us</h3>
+        <p>Premium quality dry fruits sourced naturally to keep your family healthy and energized.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="AboutUs.html">AboutUs</a></li>
+          <li><a href="Products.html">Products</a></li>
+          
+          <li><a href="ContactUs.html">ContactUs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <a href="tel:+9145551666"><i class="fas fa-phone"></i></a> 
+        
+        <a href="mailto:Zarratllp@gmail.com">Zarratllp@gmail.com</a><i class="fas fa-envelope"></i>
+        
+        <div class="footer-social">
+          <a href="http://wa.me/918263808640"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.instagram.com/istiaq_ansari?igsh=MXBhb3VuendzY2tvZQ=="><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1GHMqpAkFR/"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="newsletter">
+        <h3>Newsletter</h3>
+        <input type="email" placeholder="Enter your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+
+    <div class="copyright">
+      © 2025 DryFruit Shop. All Rights Reserved.
+    </div>
+  </footer>
+
+ 
+
+</body>
+</html>
